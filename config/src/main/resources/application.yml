@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/haloer111/config-repo.git
+          username: 345249961@qq.com
+          password: gexiao007
+          # git\u7684\u672C\u5730\u4ED3\u5E93\u4F4D\u7F6E
+          basedir: E:/github/springcloudtest4/config-repo
+  rabbitmq:
+    host: 192.168.0.107
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      cors:
+        # \u5C06 bus-refresh\u66B4\u9732\u51FA\u53BB
+        exposed-headers: "*"
+      exposure:
+        include: bus-refresh
+server:
+  port: 8080
